@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^25.3.1",
+    "drizzle-kit": "^0.31.9"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@google/generative-ai": "^0.24.1",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.12.2",
+    "mysql2": "^3.18.1",
+    "redis": "^5.11.0"
+  },
+  "optionalDependencies": {
+    "@esbuild/darwin-arm64": "^0.27.3",
+    "@esbuild/darwin-x64": "^0.27.3"
+  }
+}
