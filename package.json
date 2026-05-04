@@ -5,5 +5,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=web",
+    "dev:api": "bun run --cwd apps/api dev"
+  }
 }

@@ -3,10 +3,14 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun run --watch src/index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^25.3.1",
-    "drizzle-kit": "^0.31.9"
+    "@types/pg": "^8.20.0",
+    "drizzle-kit": "^0.31.10"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -14,9 +18,12 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
     "@google/generative-ai": "^0.24.1",
-    "drizzle-orm": "^0.45.1",
+    "@neondatabase/serverless": "^1.0.2",
+    "drizzle-orm": "^0.45.2",
+    "eslint-config-next": "16.2.2",
     "hono": "^4.12.2",
-    "mysql2": "^3.18.1",
+    "next": "16.2.2",
+    "pg": "^8.20.0",
     "redis": "^5.11.0"
   },
   "optionalDependencies": {

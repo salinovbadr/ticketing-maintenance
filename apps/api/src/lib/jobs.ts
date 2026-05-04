@@ -12,7 +12,7 @@ export async function checkSLABreaches() {
         .where(and(
             eq(tickets.status, 'open'),
             eq(tickets.slaResponseBreached, false),
-            sql`DATE_ADD(reported_at, INTERVAL sla_response_target_minutes MINUTE) < ${now}`
+            sql`reported_at + (sla_response_target_minutes || ' minutes')::interval < ${now}`
         ));
 
     // 2. Check Resolution Breach
@@ -21,7 +21,7 @@ export async function checkSLABreaches() {
         .where(and(
             sql`status != 'resolved' AND status != 'closed'`,
             eq(tickets.slaResolutionBreached, false),
-            sql`DATE_ADD(reported_at, INTERVAL sla_resolution_target_minutes MINUTE) < ${now}`
+            sql`reported_at + (sla_resolution_target_minutes || ' minutes')::interval < ${now}`
         ));
 
     console.log('[Job] SLA Check complete.');

@@ -3,8 +3,8 @@ import type { Config } from "drizzle-kit";
 export default {
     schema: "./src/db/schema.ts",
     out: "./drizzle",
-    dialect: "mysql",
+    dialect: "postgresql",
     dbCredentials: {
-        url: process.env.DATABASE_URL || "mysql://root:root@localhost:3306/maintenance_monitor",
+        url: process.env.DATABASE_URL!,
     },
 } satisfies Config;
